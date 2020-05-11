@@ -6,7 +6,7 @@ class Started extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromRGBO(127, 132, 190, 1),
       body: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -15,15 +15,22 @@ class Started extends StatelessWidget {
               height: 50,
             ),
             Container(
-            height: 300,
-            width: 300,
-            margin: EdgeInsets.only(bottom:10),
-              child: Image.asset("images/meditate2.png"),
+              height: 240,
+              padding: EdgeInsets.symmetric(vertical: 3),
+              alignment: Alignment.center,
+              child: Image.asset(
+                "images/meditate.gif",
+                fit: BoxFit.cover,
+                width: MediaQuery.of(context).size.width,
+              ),
+            ),
+            SizedBox(
+              height: 20,
             ),
             Text(
-              'O  N  E  P  E  A  C  E',
+              'ONEPEACE',
               style: TextStyle(
-                  color: Colors.black, fontSize: 24, wordSpacing: 3.0),
+                  color: Colors.white, fontSize: 24, letterSpacing: 10.0),
             ),
             SizedBox(
               height: 10,
@@ -33,43 +40,45 @@ class Started extends StatelessWidget {
               style: TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.w300,
-                color: Colors.black26,
+                color: Colors.white60,
               ),
             ),
             SizedBox(
               height: 80,
             ),
             Padding(
-              padding: EdgeInsets.only(bottom:15, left:40, right: 40),
+              padding: EdgeInsets.all(40),
               child: SizedBox(
                 width: double.infinity,
                 height: 40,
                 child: RaisedButton(
                   child: Text(
                     "Get Started",
-                    style: TextStyle(fontSize: 17),
+                    style: TextStyle(fontSize: 18),
                   ),
                   color: Colors.red,
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return Home();
-                    }));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return Home();
+                      }),
+                    );
                   },
                   textColor: Colors.white,
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.0)),
+                    borderRadius: BorderRadius.circular(18.0),
+                  ),
                 ),
               ),
             ),
-            Text(
-              'Sign Up for new account?',
-              style: TextStyle(
-                color: Colors.grey,
-                
-                fontSize: 15,
-              ),
-            ),
+            // Text(
+            //   'Sign Up for new account?',
+            //   style: TextStyle(
+            //     color:Colors.white60,
+            //     fontSize: 15,
+            //   ),
+            // ),
           ],
         ),
       ),

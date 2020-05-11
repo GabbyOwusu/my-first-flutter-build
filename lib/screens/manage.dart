@@ -1,82 +1,72 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mynewapp/screens/basics.dart';
 
 class ManageStress extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue,
+      appBar: AppBar(elevation: 0),
+
       body: SafeArea(
         child: ListView(
           children: <Widget>[
-            Row(
-              children: <Widget>[
-                Container(
-                    margin: EdgeInsets.only(left: 6),
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.arrow_back,
-                        size: 30,
-                        color: Colors.white,
-                      ),onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) {
-                          return Cards();
-                        }));
-                      },
-                    )),
-              ],
-            ),
+           
+            
             SizedBox(
               height: 30,
             ),
-            Text(
-              '      Managing Stress',
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.white,
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-              '             Week 1-Chapter 1',
-              style: TextStyle(color: Colors.white),
-            ),
-            SizedBox(
-              height: 90,
-            ),
-            Text(
-              '     Getting Started',
-              style: TextStyle(
-                fontSize: 30,
-                color: Colors.white,
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Center(
-              child: Container(
-                child: Text(
-                  'Before we begin, We would like you to sit in a'
-                  " "
-                  ' relaxed position in a place with no external'
-                  " "
-                  'disturbance. We recommend wearing'
-                  " "
-                  'headphones throughout  the course period for'
-                  " "
-                  'better results ',
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    color: Colors.white,
-                  ),
+            Container(
+               margin: EdgeInsets.only(left: 20),
+              child: Text(
+                'Managing Stress',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.white,
                 ),
-                constraints: BoxConstraints.expand(width: 320.0, height: 110.0),
-                alignment: FractionalOffset(0.5, 0.5),
               ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 20),
+              child: Text(
+                'Week 1-Chapter 1',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 20),
+              child: Text(
+                'Getting Started',
+                style: TextStyle(
+                  fontSize: 30,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Container(
+               margin: EdgeInsets.only(left: 20),
+              child: Text(
+                'Before we begin, We would like you to sit in a '
+                ' relaxed position in a place with no external '
+                'disturbance. We recommend wearing '
+                'headphones throughout  the course period for '
+                'better results ',
+                style: TextStyle(
+                  fontSize: 16.0,
+                  color: Colors.white,
+                  height: 1.5,
+                ),
+              ),
+             
             ),
             Container(
               width: 90,
@@ -101,7 +91,7 @@ class ManageStress extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        //currentIndex: _currentIndex,
+      elevation: 0,
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.blue,
         items: [
