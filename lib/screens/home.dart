@@ -6,19 +6,19 @@ import 'package:mynewapp/screens/manage.dart';
 class Home extends StatelessWidget {
   final labels = [
     'Chapter 9: Continue Reading',
-    'Chapter 9: Lets Begin',
-    'Chapter 9: Take A Seat',
+    'Hows your mood today',
+    'Log in Activity',
   ];
   final icons = [
-    Icons.face,
     Icons.play_arrow,
-    Icons.play_circle_filled,
+    Icons.face,
+    Icons.add,
   ];
 
   final colors = [
-    Colors.blue,
-    Colors.red,
-    Colors.black,
+    Color.fromRGBO(54, 59, 57, 10),
+    Color.fromRGBO(83, 90, 186, 10),
+    Color.fromRGBO(83, 90, 186, 10),
   ];
   @override
   Widget build(BuildContext context) {
@@ -45,17 +45,17 @@ class Home extends StatelessWidget {
           ),
         ],
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromRGBO(232, 236, 239, 3),
       body: SafeArea(
         child: Stack(
           children: <Widget>[
             Container(
               width: double.infinity,
-              height: 250,
+              height: 230,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(30),
-                  bottomRight: Radius.circular(30),
+                  bottomLeft: Radius.circular(50),
+                  bottomRight: Radius.circular(50),
                 ),
                 color: Colors.redAccent,
               ),
@@ -68,7 +68,6 @@ class Home extends StatelessWidget {
                   width: 300,
                   height: 290,
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey),
                     borderRadius: BorderRadius.circular(15.0),
                     color: Colors.white,
                   ),
@@ -100,30 +99,27 @@ class Home extends StatelessWidget {
                                 ),
                             itemCount: 3,
                             itemBuilder: (context, index) {
-                              return SizedBox(
-                                height: 50,
-                                child: Container(
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(30),
-                                        color: colors[index]),
-                                    child: Row(
-                                      children: <Widget>[
-                                        IconButton(
-                                          icon: Icon(icons[index]),
+                              return Container(
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(30),
+                                      color: colors[index]),
+                                  child: Row(
+                                    children: <Widget>[
+                                      IconButton(
+                                        icon: Icon(icons[index]),
+                                        color: Colors.white,
+                                        onPressed: () {},
+                                      ),
+                                      Text(
+                                        labels[index],
+                                        textAlign: TextAlign.left,
+                                        style: TextStyle(
+                                          fontSize: 13,
                                           color: Colors.white,
-                                          onPressed: () {},
                                         ),
-                                        Text(
-                                          labels[index],
-                                          textAlign: TextAlign.left,
-                                          style: TextStyle(
-                                            fontSize: 13,
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ],
-                                    )),
-                              );
+                                      ),
+                                    ],
+                                  ));
                             }),
                       ),
                     ],
@@ -293,36 +289,34 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.white,
         currentIndex: 1,
         elevation: 0,
+        onTap: (int index) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) {
+              return Cards();
+            }),
+          );
+        },
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home,
-              color: Colors.black,
-              size: 18,
+              color: Colors.redAccent,
+              size: 20,
             ),
             title: Text(
               'Home',
-              style: TextStyle(color: Colors.black),
+              style: TextStyle(color: Colors.redAccent),
             ),
           ),
           BottomNavigationBarItem(
-            icon: IconButton(
-              icon: Icon(
-                Icons.book,
-                color: Colors.black,
-                size: 18,
-              ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) {
-                    return Cards();
-                  }),
-                );
-              },
+            icon: Icon(
+              Icons.book,
+              color: Colors.black,
+              size: 18,
             ),
-            title: Text(''),
+            title: Text('Courses', style: TextStyle(color: Colors.black)),
             backgroundColor: Colors.white,
           ),
           BottomNavigationBarItem(
