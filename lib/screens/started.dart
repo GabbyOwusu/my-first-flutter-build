@@ -11,9 +11,7 @@ class Started extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            SizedBox(
-              height: 50,
-            ),
+            SizedBox(height: 50),
             Container(
               height: 240,
               padding: EdgeInsets.symmetric(vertical: 3),
@@ -24,17 +22,13 @@ class Started extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
               ),
             ),
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 20),
             Text(
               'ONEPEACE',
               style: TextStyle(
                   color: Colors.white, fontSize: 24, letterSpacing: 10.0),
             ),
-            SizedBox(
-              height: 10,
-            ),
+            SizedBox(height: 10),
             Text(
               'where peace is everything ',
               style: TextStyle(
@@ -43,9 +37,7 @@ class Started extends StatelessWidget {
                 color: Colors.white60,
               ),
             ),
-            SizedBox(
-              height: 80,
-            ),
+            SizedBox(height: 80),
             Padding(
               padding: EdgeInsets.all(40),
               child: SizedBox(
