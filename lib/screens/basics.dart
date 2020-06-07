@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:mynewapp/screens/manage.dart';
 
 class Cards extends StatefulWidget {
-  
   final texts = [
     "The Basics",
     "Managing Stress",
@@ -68,6 +67,7 @@ class _CardsState extends State<Cards> {
               margin: EdgeInsets.only(
                 left: 15,
                 right: 15,
+                bottom: 3,
               ),
               child: Card(
                 shape: RoundedRectangleBorder(
@@ -88,8 +88,11 @@ class _CardsState extends State<Cards> {
                       );
                     },
                   ),
-                  title: Text(widget.texts[index]),
-                  subtitle: Text(widget.subs[index]),
+                  title: Text(widget.texts[index],
+                      style: TextStyle(fontWeight: FontWeight.w600)),
+                      
+                  subtitle:
+                      Text(widget.subs[index], style: TextStyle(fontSize: 15)),
                 ),
               ),
             );
