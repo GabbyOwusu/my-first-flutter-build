@@ -51,11 +51,11 @@ class Home extends StatelessWidget {
           children: <Widget>[
             Container(
               width: double.infinity,
-              height: 230,
+              height: 250,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(50),
-                  bottomRight: Radius.circular(50),
+                  bottomLeft: Radius.circular(30),
+                  bottomRight: Radius.circular(30),
                 ),
                 color: Colors.redAccent,
               ),
@@ -64,66 +64,70 @@ class Home extends StatelessWidget {
               left: 30,
               right: 30,
               child: Container(
-                  padding: EdgeInsets.only(left: 30, right: 30),
-                  width: 300,
-                  height: 290,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15.0),
-                    color: Colors.white,
-                  ),
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(
-                        height: 20,
+                padding: EdgeInsets.only(left: 30, right: 30),
+                width: 300,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15.0),
+                  color: Colors.white,
+                ),
+                child: Column(
+                  children: <Widget>[
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      'Morning, Kishore',
+                      style: TextStyle(
+                        fontSize: 23,
+                        fontWeight: FontWeight.bold,
                       ),
-                      Text(
-                        'Morning, Kishore',
-                        style: TextStyle(
-                          fontSize: 23,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        'Lets continue with Session',
-                        style: TextStyle(fontSize: 13),
-                      ),
-                      SizedBox(height: 10),
-                      Container(
-                        height: 200,
-                        child: ListView.separated(
-                            separatorBuilder: (context, index) => SizedBox(
-                                  height: 10,
-                                ),
-                            itemCount: 3,
-                            itemBuilder: (context, index) {
-                              return Container(
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(30),
-                                      color: colors[index]),
-                                  child: Row(
-                                    children: <Widget>[
-                                      IconButton(
-                                        icon: Icon(icons[index]),
-                                        color: Colors.white,
-                                        onPressed: () {},
-                                      ),
-                                      Text(
-                                        labels[index],
-                                        textAlign: TextAlign.left,
-                                        style: TextStyle(
-                                          fontSize: 13,
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    ],
-                                  ));
-                            }),
-                      ),
-                    ],
-                  )),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      'Lets continue with Session',
+                      style: TextStyle(fontSize: 13),
+                    ),
+                    SizedBox(height: 30),
+                    Container(
+                      height: 200,
+                      child: ListView.separated(
+                          separatorBuilder: (context, index) => SizedBox(
+                                height: 15,
+                              ),
+                          itemCount: 3,
+                          itemBuilder: (context, index) {
+                            return Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  color: colors[index]),
+                              child: Row(
+                                children: <Widget>[
+                                  IconButton(
+                                    icon: Icon(icons[index]),
+                                    color: Colors.white,
+                                    onPressed: () {},
+                                  ),
+                                  Text(
+                                    labels[index],
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          }),
+                    ),
+                    SizedBox(
+                      height: 35,
+                    ),
+                  ],
+                ),
+              ),
             ),
             Align(
               alignment: Alignment.centerLeft,
@@ -138,148 +142,146 @@ class Home extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              margin: EdgeInsets.only(top: 350),
-              height: 140,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: <Widget>[
-                  Container(
-                    width: 290,
-                    margin: EdgeInsets.only(left: 30),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.0),
-                      color: Colors.white,
-                      image: DecorationImage(
-                        image: AssetImage(
-                          'images/flower2.jpg',
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                margin: EdgeInsets.only(bottom: 40),
+                height: 160,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: <Widget>[
+                    Container(
+                      width: 290,
+                      margin: EdgeInsets.only(left: 30),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15.0),
+                        color: Colors.white,
+                        image: DecorationImage(
+                          image: AssetImage(
+                            'images/flower2.jpg',
+                          ),
+                          fit: BoxFit.fitWidth,
                         ),
-                        fit: BoxFit.fitWidth,
+                      ),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        margin: EdgeInsets.fromLTRB(10, 70, 10, 9),
+                        child: Row(
+                          children: <Widget>[
+                            IconButton(
+                              icon: Icon(
+                                CupertinoIcons.play_arrow,
+                                size: 35,
+                                color: Colors.grey,
+                              ),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) {
+                                    return ManageStress();
+                                  }),
+                                );
+                              },
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  '01.The Basics',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  'Deserunt fugiat dolore. Deserunt \nhenderitsomnecionetct dk dujdf,\nDeserunt henderit',
+                                  style: TextStyle(
+                                      color: Colors.grey, fontSize: 10),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
                       ),
                     ),
-                    child: Stack(
-                      children: <Widget>[
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(right: 30),
+                      width: 290,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15.0),
+                        color: Colors.white,
+                        image: DecorationImage(
+                          image: AssetImage(
+                            'images/flower1.jpg',
                           ),
-                          margin: EdgeInsets.fromLTRB(10, 70, 10, 9),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: <Widget>[
-                              IconButton(
-                                icon: Icon(
-                                  CupertinoIcons.play_arrow,
-                                  size: 35,
-                                  color: Colors.grey,
-                                ),
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) {
-                                      return ManageStress();
-                                    }),
-                                  );
-                                },
-                              ),
-                              Column(
-                                children: <Widget>[
-                                  SizedBox(
-                                    height: 10,
+                          fit: BoxFit.fitWidth,
+                        ),
+                      ),
+                      child: Stack(
+                        children: <Widget>[
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            margin: EdgeInsets.fromLTRB(10, 70, 10, 9),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: <Widget>[
+                                IconButton(
+                                  icon: Icon(
+                                    CupertinoIcons.play_arrow,
+                                    size: 35,
+                                    color: Colors.grey,
                                   ),
-                                  Padding(
-                                    padding: EdgeInsets.only(right: 115),
-                                    child: Text(
-                                      '01. The Basics',
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
+                                  onPressed: () {},
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(right: 90),
+                                      child: Text(
+                                        '02. Managing Stress',
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    height: 3,
-                                  ),
-                                  Text(
-                                    'Deserunt fugiat dolore. Deserunt henderit\nsomne cionetct dk dujdf,  Deserunt henderit',
-                                    style: TextStyle(color: Colors.grey),
-                                  ),
-                                ],
-                              )
-                            ],
+                                    SizedBox(
+                                      height: 5,
+                                    ),
+                                    Text(
+                                      'Deserunt fugiat dolore. Deserunt \nhenderitsomnecionetct dk dujdf,\nDeserunt henderit',
+                                      style: TextStyle(
+                                          color: Colors.grey, fontSize: 10),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(right: 30),
-                    width: 290,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.0),
-                      color: Colors.white,
-                      image: DecorationImage(
-                        image: AssetImage(
-                          'images/flower1.jpg',
-                        ),
-                        fit: BoxFit.fitWidth,
+                        ],
                       ),
                     ),
-                    child: Stack(
-                      children: <Widget>[
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          margin: EdgeInsets.fromLTRB(10, 70, 10, 9),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: <Widget>[
-                              IconButton(
-                                icon: Icon(
-                                  CupertinoIcons.play_arrow,
-                                  size: 35,
-                                  color: Colors.grey,
-                                ),
-                                onPressed: () {},
-                              ),
-                              Column(
-                                //  mainAxisAlignment: MainAxisAlignment.start,
-                                children: <Widget>[
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(right: 90),
-                                    child: Text(
-                                      '02. Managing Stress',
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 3,
-                                  ),
-                                  Text(
-                                    'Deserunt fugiat dolore. Deserunt henderit\nsomne cionetct dk dujdf,  Deserunt henderit',
-                                    style: TextStyle(color: Colors.grey),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             )
           ],
