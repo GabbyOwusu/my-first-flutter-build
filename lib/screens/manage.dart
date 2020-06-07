@@ -37,7 +37,7 @@ class ManageStress extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 50,
+              height: 80,
             ),
             Container(
               margin: EdgeInsets.only(left: 20),
@@ -50,24 +50,25 @@ class ManageStress extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 40,
+              height: 30,
             ),
             Container(
                margin: EdgeInsets.only(left: 20),
               child: Text(
                 'Before we begin, We would like you to sit in a '
-                ' relaxed position in a place with no external '
+                'relaxed position in a place with no external '
                 'disturbance. We recommend wearing '
                 'headphones throughout  the course period for '
                 'better results ',
                 style: TextStyle(
-                  fontSize: 16.0,
+                  fontSize: 16,
                   color: Colors.white,
                   height: 1.5,
                 ),
               ),
              
             ),
+            SizedBox(height: 80),
             Container(
               width: 90,
               child: RaisedButton(
