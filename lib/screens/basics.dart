@@ -90,7 +90,6 @@ class _CardsState extends State<Cards> {
                   ),
                   title: Text(widget.texts[index],
                       style: TextStyle(fontWeight: FontWeight.w600)),
-                      
                   subtitle:
                       Text(widget.subs[index], style: TextStyle(fontSize: 15)),
                 ),
